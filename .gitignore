@@ -167,3 +167,4 @@ outputs/
 notebooks/*
 */**/*.ipynb
 */**/*.ipynb_checkpoints
+*/**/runs/

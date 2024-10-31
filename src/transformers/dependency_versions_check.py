@@ -37,7 +37,9 @@ for pkg in pkgs_to_check_at_runtime:
 
             if not is_tokenizers_available():
                 continue  # not required, check version only if installed
-
-        require_version_core(deps[pkg])
+        try:
+            require_version_core(deps[pkg])
+        except Exception as e:
+            print(f'warning: {e}')
     else:
         raise ValueError(f"can't find {pkg} in {deps.keys()}, check dependency_versions_table.py")
